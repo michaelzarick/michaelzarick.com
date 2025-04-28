@@ -56,15 +56,27 @@
       margin-top: 2rem;
     }
 
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
     .image-frame {
-      display: block;
-      margin: 0 auto 2rem;
       border: 4px solid #5e548e;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
       border-radius: 8px;
-      max-width: 400px;
+      max-width: 300px;
       width: 100%;
       height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -82,9 +94,13 @@
 
   <main>
     <section id="about">
-      <img src="/images/catdad.JPG" alt="Michael and his cat" class="image-frame">
-      <h2>About Me</h2>
-      <p class="handwritten">Hey, my name is Michael Zarick. I'm deeply interested in community and community building. I love video games, movies, and books about fantasy, or books about real life that might seem fantastical. Thanks for visiting my site. Take a look around.  </p>
+      <div class="about-container">
+        <img src="/images/catdad.JPG" alt="Michael and his cat" class="image-frame">
+        <div>
+          <h2>About Me</h2>
+          <p class="handwritten">Hey, my name is Michael Zarick. I'm deeply interested in community and community building. I love video games, movies, and books about fantasy, or books about real life that might seem fantastical. Thanks for visiting my site. Take a look around.  </p>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
@@ -112,7 +128,7 @@
 
     <section id="Extra links">
       <h2>Extra Links</h2>
-      <p>👴🏻 <a href="/oldtemplate">The 'old' site.</a></p>
+      <p>👴🏻 <a href="michaelzarick.com/oldtemplate">The 'old' site.</a></p>
       <p>🦋 <a href="https://bsky.app/profile/michaelzarick.com">Bluesky</a></p>
       <p>🐦 <a href="https://x.com/MichaelZarick">Twitter</a></p>
       <p>👨‍💼 <a href="https://www.linkedin.com/in/michaelzarick/">LinkedIn</a></p>
