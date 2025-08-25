@@ -18,16 +18,15 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: #5e548e;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
-      header {
-        font-size: 2rem;
-      }
+      header { font-size: 2rem; }
     }
 
     main {
-      max-width: 800px;
+      max-width: 1000px; /* widened from 800px */
       margin: 0 auto;
     }
 
@@ -42,16 +41,16 @@
     .form-embed {
       display: block;
       width: 100%;
+      min-height: 1700px;
       border: 0;
-      height: 1700px;
     }
 
     @media (max-width: 900px) {
-      .form-embed { height: 1900px; }
+      .form-embed { min-height: 1900px; }
     }
 
     @media (max-width: 600px) {
-      .form-embed { height: 2100px; }
+      .form-embed { min-height: 2100px; }
     }
   </style>
 </head>
