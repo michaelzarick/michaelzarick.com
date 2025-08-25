@@ -1,125 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nearly Dead – Michael Zarick</title>
-
-  <!-- Inherit your site's base CSS if available -->
-  <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael's Nearly Dead Birthday Party</title>
   <style>
-    :root{
-      /* Tweak these if you want tighter brand alignment */
-      --maxw: 960px;            /* content max width */
-      --radius: 16px;           /* card radius */
-      --pad: clamp(16px, 2vw, 24px);
-      --shadow: 0 6px 30px rgba(0,0,0,.08);
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #6b7280;
-      --accent: #111111;        /* headings/links; adjust to your brand */
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg: #0b0b0e;
-        --fg: #e7e7ea;
-        --muted: #9aa0aa;
-        --shadow: 0 10px 40px rgba(0,0,0,.45);
-        --accent: #e7e7ea;
-      }
-    }
-
-    html, body { height: 100%; }
-    body{
+    body {
       margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      padding: 2rem;
+      font-family: 'Courier New', monospace;
+      background-color: #fefae0;
+      color: #333;
       line-height: 1.6;
     }
 
-    .wrap{
-      max-width: var(--maxw);
+    header {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #5e548e;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+      }
+    }
+
+    main {
+      max-width: 800px;
       margin: 0 auto;
-      padding: clamp(24px, 4vw, 48px) var(--pad) 96px;
     }
 
-    header h1{
-      margin: 0 0 4px 0;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      color: var(--accent);
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.15;
-    }
-    header p{
-      margin: 0 0 20px 0;
-      color: var(--muted);
-      font-size: clamp(14px, 1.8vw, 18px);
+    .form-card {
+      border: 4px solid #5e548e;
+      border-radius: 8px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+      background: #fff;
+      overflow: hidden;
     }
 
-    .card{
-      background: var(--bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
-      overflow: hidden; /* rounds the iframe corners */
-    }
-
-    /* Responsive iframe wrapper */
-    .iframe-wrap{
-      position: relative;
-      width: 100%;
-      /* Height strategy: tall enough for most Forms; adjusts by breakpoint */
-      min-height: 75vh;
-      height: 100%;
-    }
-    iframe{
+    .form-embed {
       display: block;
       width: 100%;
-      height: min(1800px, 92vh); /* cap on desktop; fills viewport on smaller screens */
       border: 0;
+      height: 1700px;
     }
 
-    /* Make the embed taller on narrow screens to reduce nested scrolling */
-    @media (max-width: 640px){
-      iframe{ height: 1800px; }
-    }
-    @media (min-width: 1280px){
-      iframe{ height: 1400px; }
+    @media (max-width: 900px) {
+      .form-embed { height: 1900px; }
     }
 
-    /* Optional small footer note */
-    .note{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
+    @media (max-width: 600px) {
+      .form-embed { height: 2100px; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <h1>Nearly Dead</h1>
-      <p>Share your story, tip, or idea. This form is embedded securely from Google Forms.</p>
-    </header>
+  <main>
+    <header>Michael's Nearly Dead Birthday Party</header>
 
-    <section class="card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLScM0jXYxf2Ayj6LekgiU4ByE5Wml8NKbJFUuAtXi94P9IGDIg/viewform?embedded=true"
-          title="Nearly Dead — Google Form"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-          Loading…
-        </iframe>
-      </div>
-    </section>
-
-    <p class="note">Having trouble? <a href="https://docs.google.com/forms/d/e/1FAIpQLScM0jXYxf2Ayj6LekgiU4ByE5Wml8NKbJFUuAtXi94P9IGDIg/viewform" target="_blank" rel="noopener">Open the form in a new tab</a>.</p>
+    <div class="form-card" aria-label="Nearly Dead form">
+      <iframe
+        class="form-embed"
+        title="Nearly Dead — Google Form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScM0jXYxf2Ayj6LekgiU4ByE5Wml8NKbJFUuAtXi94P9IGDIg/viewform?embedded=true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
   </main>
 </body>
 </html>
